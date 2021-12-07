@@ -225,10 +225,5 @@ public class AboutCompanyPage {
 
         return this;
     }
-
-    @Attachment(value = "Screenshot", type = "image/png", fileExtension = "png")
-    public byte[] takeScreenshot() {
-        final WebDriver driver = WebDriverRunner.getWebDriver();
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
 }
+

@@ -1,0 +1,22 @@
+{
+  "a8e78069c916c8e77527ae8feab3ce4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "defa470eb08c38b6",
+      "status" : "broken",
+      "statusDetails" : "Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'DESKTOP-HBHKSG0', ip: '10.237.25.114', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_262'\nselenide.remote: https://user1:1234@\nDriver info: driver.version: SelenideDriver\nselenide.url: https://demoqa.com/automation-practice-form\nselenide.baseUrl: http://localhost:8080",
+      "time" : {
+        "start" : 1638425369758,
+        "stop" : 1638425370204,
+        "duration" : 446
+      }
+    } ]
+  }
+}

@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"broken","Thu Dec 02 09:09:29 MSK 2021","Thu Dec 02 09:09:30 MSK 2021","446","","yahoo.andreikuzn.tests.StudentRegistrationFormPageObject","","yahoo.andreikuzn.tests.StudentRegistrationFormPageObject","fillRegFormTest","fillRegFormTest()",""

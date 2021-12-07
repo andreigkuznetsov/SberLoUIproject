@@ -1,0 +1,26 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "yahoo.andreikuzn.tests.StudentRegistrationFormPageObject",
+    "children" : [ {
+      "name" : "fillRegFormTest",
+      "uid" : "defa470eb08c38b6",
+      "parentUid" : "eb0443632096cbad9c48a0f70cb91040",
+      "status" : "broken",
+      "time" : {
+        "start" : 1638425369758,
+        "stop" : 1638425370204,
+        "duration" : 446
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 1,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "yahoo.andreikuzn.tests.StudentRegistrationFormPageObject"
+  } ]
+}

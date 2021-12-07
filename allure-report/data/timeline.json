@@ -1,0 +1,51 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-HBHKSG0",
+    "children" : [ {
+      "name" : "11428@DESKTOP-HBHKSG0.Test worker(1)",
+      "children" : [ {
+        "name" : "fillRegFormTest()",
+        "uid" : "58555de0e5169ab",
+        "parentUid" : "a866562f78b42ee375ce75d9fde27211",
+        "status" : "broken",
+        "time" : {
+          "start" : 1638425227001,
+          "stop" : 1638425228342,
+          "duration" : 1341
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a866562f78b42ee375ce75d9fde27211"
+    }, {
+      "name" : "15292@DESKTOP-HBHKSG0.Test worker(1)",
+      "children" : [ {
+        "name" : "fillRegFormTest()",
+        "uid" : "defa470eb08c38b6",
+        "parentUid" : "841acbdc7a3fe91a2838450d8c182930",
+        "status" : "broken",
+        "time" : {
+          "start" : 1638425369758,
+          "stop" : 1638425370204,
+          "duration" : 446
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 1,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "841acbdc7a3fe91a2838450d8c182930"
+    } ],
+    "uid" : "5b8f1ab0d528150b16e6b9313c3ca430"
+  } ]
+}

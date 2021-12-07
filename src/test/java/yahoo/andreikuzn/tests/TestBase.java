@@ -24,7 +24,7 @@ public class TestBase {
         String password = cfg.password();
 
         //SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.startMaximized = true;
+        //Configuration.startMaximized = true;
         Configuration.remote = format("https://%s:%s@selenoid.autotests.cloud/wd/hub", login, password);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

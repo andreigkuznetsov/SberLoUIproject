@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-public class WebpagesAboutDpdTests extends TestBase {
+public class WebpagesAboutSberLoTests extends TestBase {
 
     @Test
     @Owner("Andrei Kuznetsov")

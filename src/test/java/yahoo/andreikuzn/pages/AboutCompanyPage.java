@@ -164,7 +164,7 @@ public class AboutCompanyPage {
         return this;
     }
 
-    @Step("Проверяем, что документ Публичная оферта содержит 13 страниц")
+    @Step("Проверяем, что документ Положение о тарифах содержит 217 страниц")
     public AboutCompanyPage checkPublicOfferDoc() throws IOException {
         downloadText.click();
         File pdf = downloadLink.download();

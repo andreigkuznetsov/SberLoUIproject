@@ -2,27 +2,37 @@ package yahoo.andreikuzn.pages;
 
 import com.codeborne.pdftest.PDF;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 
 import java.io.File;
 import java.io.IOException;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class AboutCompanyPage {
 
-    private final String ABOUT_TEXT = "О компании",
-            ABOUT_BREADCRUMBS = "Главная  >  О DPD  >  О компании",
+    private final String INDEX_TEXT = "Отследить посылку",
+            ABOUT_TEXT = "О компании",
+            CONTENT_ABOUT_TEXT = "Добро пожаловать в компанию",
+            BRANCHES_TEXT = "Региональные офисы",
+            CONTENT_BRANCHES_TEXT = "Красноярск",
+            PRESS_TEXT = "Пресс-центр",
+            CONTENT_PRESS_TEXT = "Новости",
+            DOCS_TEXT = "Документы",
+            CONTENT_DOCS_TEXT = "Публичная оферта",
+            QUESTIONS_OPEN_TEXT = "Вопрос/ответ",
+            QUESTIONS_TEXT = "Вопросы и ответы",
+            CONTENT_QUESTIONS_TEXT = "компания экосистемы Сбер",
+            CONTACTS_TEXT = "Контакты",
+            CONTENT_CONTACTS_TEXT = "Реквизиты",
+            VACANCY_TEXT = "Вакансии",
+            CONTENT_VACANCY_TEXT = "Все категории";
+
+       /*     ABOUT_BREADCRUMBS = "Главная  >  О DPD  >  О компании",
             MISSION_TITLE = "Миссия",
             MISSION_TEXT = "Миссия и корпоративные ценности",
             MISSION_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Миссия",
@@ -46,183 +56,183 @@ public class AboutCompanyPage {
             AWARDS_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Награды",
             QUALITY_TITLE = "Политика качества",
             QUALITY_TEXT = "Политика качества",
-            QUALITY_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Политика качества";
+            QUALITY_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Политика качества";*/
 
     private SelenideElement
-            titleText = $("div.sub_navigation"),
-            searchText = $("div.content_wrapp"),
-            pathBreadcrumbs = $("#breadcrumb"),
-            downloadButton = $("div.content_grid div div:nth-child(2) a"),
-            downloadText = $(byText("Скачать"));
+            searchText = $("#content-wrapper"),
+            contentText = $("#content-wrapper section:nth-child(1) div div div.item.item-33.mh-240 div p"),
+            vacancyText = $("#vacancy_filter_section"),
+            openAboutPage = $("ul.nav"),
+            downloadLink = $("#content-wrapper section:nth-child(3) div div div p:nth-child(1) a"),
+            downloadText = $(byText("Положение о тарифах"));
 
-    @Step("Открываем страницу О компании сайта DPD.ru")
-    public AboutCompanyPage openAboutPage() {
-        open("https://www.dpd.ru/dpd/o-dpd/o-kompanii.do2");
+    @Step("Открываем главную страницу сайта СберЛогистика")
+    public AboutCompanyPage openIndexPage() {
+        open("https://sberlogistics.ru/");
 
         return this;
     }
-    @Step("Проверяем, что открыта страница О компании")
+
+    @Step("Проверяем, что открыта главная страница")
+    public AboutCompanyPage checkIndexText() {
+        searchText.shouldHave(text(INDEX_TEXT));
+
+        return this;
+    }
+
+    @Step("Открываем страницу О Компании сайта СберЛогистика")
+    public AboutCompanyPage openAboutPage() {
+        openAboutPage.$(byText(ABOUT_TEXT)).click();
+
+        return this;
+    }
+
+    @Step("Проверяем, что заголовок страницы О компании правильный")
     public AboutCompanyPage checkAboutText() {
         searchText.shouldHave(text(ABOUT_TEXT));
 
         return this;
     }
-    @Step("Проверяем, что путь в хлебных крошках на странице О компаниии правильный")
-    public AboutCompanyPage checkAboutBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(ABOUT_BREADCRUMBS));
+
+    @Step("Проверяем, что содержание страницы О компаниии правильное")
+    public AboutCompanyPage checkAboutContentText() {
+        searchText.shouldHave(text(CONTENT_ABOUT_TEXT));
 
         return this;
     }
-    @Step("Открываем страницу Миссия раздела О компании DPD.ru")
-    public AboutCompanyPage openMissionPage() {
-        titleText.$(byText(MISSION_TITLE)).click();
+
+    @Step("Открываем страницу Региональные офисы")
+    public AboutCompanyPage openBranchesPage() {
+        searchText.$(byText(BRANCHES_TEXT)).click();
 
         return this;
     }
-    @Step("Проверяем, что открыта страница Миссия раздела О компании сайта DPD.ru")
-    public AboutCompanyPage checkMissionText() {
-        searchText.shouldHave(text(MISSION_TEXT));
+
+    @Step("Проверяем, что заголовок страницы Региональные офисы правильный")
+    public AboutCompanyPage checkBranchesText() {
+        searchText.shouldHave(text(BRANCHES_TEXT));
 
         return this;
     }
-    @Step("Проверяем, что путь в хлебных крошках на странице Миссия раздела О компаниии правильный")
-    public AboutCompanyPage checkMissionBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(MISSION_BREADCRUMBS));
+
+    @Step("Проверяем, что содержание страницы Региональные офисы правильное")
+    public AboutCompanyPage checkBranchesContentText() {
+        searchText.shouldHave(text(CONTENT_BRANCHES_TEXT));
 
         return this;
     }
-    @Step("Открываем страницу История раздела О компании DPD.ru")
-    public AboutCompanyPage openHistoryPage() {
-        titleText.$(byText(HISTORY_TITLE)).click();
+
+    @Step("Открываем страницу Пресс-центр")
+    public AboutCompanyPage openPressPage() {
+        searchText.$(byText(PRESS_TEXT)).click();
 
         return this;
     }
-    @Step("Проверяем, что открыта страница История раздела О компании сайта DPD.ru")
-    public AboutCompanyPage checkHistoryText() {
-        searchText.shouldHave(text(HISTORY_TEXT));
+
+    @Step("Проверяем, что заголовок страницы Пресс-центр правильный")
+    public AboutCompanyPage checkPressText() {
+        searchText.shouldHave(text(PRESS_TEXT));
 
         return this;
     }
-    @Step("Проверяем, что путь в хлебных крошках на странице История раздела О компаниии правильный")
-    public AboutCompanyPage checkHistoryBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(HISTORY_BREADCRUMBS));
+
+    @Step("Проверяем, что содержание страницы Пресс-центр правильное")
+    public AboutCompanyPage checkPressContentText() {
+        searchText.shouldHave(text(CONTENT_PRESS_TEXT));
 
         return this;
     }
-    @Step("Открываем страницу Факты и цифры раздела О компании DPD.ru")
-    public AboutCompanyPage openFactsPage() {
-        titleText.$(byText(FACTS_TITLE)).click();
+
+    @Step("Открываем страницу Документы")
+    public AboutCompanyPage openDocsPage() {
+        searchText.$(byText(DOCS_TEXT)).click();
 
         return this;
     }
-    @Step("Проверяем, что открыта страница Факты и цифры раздела О компании сайта DPD.ru")
-    public AboutCompanyPage checkFactsText() {
-        searchText.shouldHave(text(FACTS_TEXT));
+
+    @Step("Проверяем, что заголовок страницы Документы правильный")
+    public AboutCompanyPage checkDocsText() {
+        searchText.shouldHave(text(DOCS_TEXT));
 
         return this;
     }
-    @Step("Проверяем, что путь в хлебных крошках на странице Факты и цифры раздела О компаниии правильный")
-    public AboutCompanyPage checkFactsBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(FACTS_BREADCRUMBS));
+
+    @Step("Проверяем, что содержание страницы Документы правильное")
+    public AboutCompanyPage checkDocsContentText() {
+        searchText.shouldHave(text(CONTENT_DOCS_TEXT));
 
         return this;
     }
-    @Step("Открываем страницу Истории успеха раздела О компании DPD.ru")
-    public AboutCompanyPage openSuccessPage() {
-        titleText.$(byText(SUCCESS_TITLE)).click();
 
-        return this;
-    }
-    @Step("Проверяем, что открыта страница Истории успеха раздела О компании сайта DPD.ru")
-    public AboutCompanyPage checkSuccessText() {
-        searchText.shouldHave(text(SUCCESS_TEXT));
-
-        return this;
-    }
-    @Step("Проверяем, что путь в хлебных крошках на странице Истории успеха раздела О компаниии правильный")
-    public AboutCompanyPage checkSuccessBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(SUCCESS_BREADCRUMBS));
-
-        return this;
-    }
-    @Step("Открываем страницу Управление раздела О компании DPD.ru")
-    public AboutCompanyPage openManagementPage() {
-        titleText.$(byText(MANAGEMENT_TITLE)).click();
-
-        return this;
-    }
-    @Step("Проверяем, что открыта страница Управление раздела О компании сайта DPD.ru")
-    public AboutCompanyPage checkManagementText() {
-        searchText.shouldHave(text(MANAGEMENT_TEXT));
-
-        return this;
-    }
-    @Step("Проверяем, что путь в хлебных крошках на странице Управление раздела О компаниии правильный")
-    public AboutCompanyPage checkManagementBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(MANAGEMENT_BREADCRUMBS));
-
-        return this;
-    }
-    @Step("Открываем страницу Лицензии раздела О компании DPD.ru")
-    public AboutCompanyPage openLisencePage() {
-        titleText.$(byText(LISENCE_TITLE)).click();
-
-        return this;
-    }
-    @Step("Проверяем, что открыта страница Лицензии раздела О компании сайта DPD.ru")
-    public AboutCompanyPage checkLisenceText() {
-        searchText.shouldHave(text(LISENCE_TEXT));
-
-        return this;
-    }
-    @Step("Проверяем, что путь в хлебных крошках на странице Лицензии раздела О компаниии правильный")
-    public AboutCompanyPage checkLisenceBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(LISENCE_BREADCRUMBS));
-
-        return this;
-    }
-    @Step("Открываем страницу Награды раздела О компании DPD.ru")
-    public AboutCompanyPage openAwardsPage() {
-        titleText.$(byText(AWARDS_TITLE)).click();
-
-        return this;
-    }
-    @Step("Проверяем, что открыта страница Награды раздела О компании сайта DPD.ru")
-    public AboutCompanyPage checkAwardsText() {
-        searchText.shouldHave(text(AWARDS_TEXT));
-
-        return this;
-    }
-    @Step("Проверяем, что путь в хлебных крошках на странице Награды раздела О компаниии правильный")
-    public AboutCompanyPage checkAwardsBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(AWARDS_BREADCRUMBS));
-
-        return this;
-    }
-    @Step("Открываем страницу Политика качества раздела О компании DPD.ru")
-    public AboutCompanyPage openQualityPage() {
-        titleText.$(byText(QUALITY_TITLE)).click();
-
-        return this;
-    }
-    @Step("Проверяем, что открыта страница Политика качества раздела О компании сайта DPD.ru")
-    public AboutCompanyPage checkQualityText() {
-        searchText.shouldHave(text(QUALITY_TEXT));
-
-        return this;
-    }
-    @Step("Проверяем, что путь в хлебных крошках на странице Политика качества раздела О компаниии правильный")
-    public AboutCompanyPage checkQualityBreadcrumbs() {
-        pathBreadcrumbs.shouldHave(text(QUALITY_BREADCRUMBS));
-
-        return this;
-    }
-    @Step("Проверяем, что документ Политика качества содержит 1 страницу")
-    public AboutCompanyPage checkQualityPolicyDoc() throws IOException {
-        downloadText.scrollTo();
-        File pdf = downloadButton.download();
+    @Step("Проверяем, что документ Публичная оферта содержит 13 страниц")
+    public AboutCompanyPage checkPublicOfferDoc() throws IOException {
+        downloadText.click();
+        File pdf = downloadLink.download();
         PDF parsedPdf = new PDF(pdf);
-        Assertions.assertEquals(1, parsedPdf.numberOfPages);
+        Assertions.assertEquals(217, parsedPdf.numberOfPages);
+
+        return this;
+    }
+
+    @Step("Открываем страницу Вопросы и ответы")
+    public AboutCompanyPage openQuestionsAndAnswersPage() {
+        searchText.$(byText(QUESTIONS_OPEN_TEXT)).click();
+
+        return this;
+    }
+
+    @Step("Проверяем, что заголовок страницы Вопросы и ответы правильный")
+    public AboutCompanyPage checkQuestionsAndAnswersText() {
+        searchText.shouldHave(text(QUESTIONS_TEXT));
+
+        return this;
+    }
+
+    @Step("Проверяем, что содержание страницы Вопросы и ответы правильное")
+    public AboutCompanyPage checkQuestionsAndAnswersContentText() {
+        searchText.shouldHave(text(CONTENT_QUESTIONS_TEXT));
+
+        return this;
+    }
+
+    @Step("Открываем страницу Контакты")
+    public AboutCompanyPage openContactsPage() {
+        searchText.$(byText(CONTACTS_TEXT)).click();
+
+        return this;
+    }
+
+    @Step("Проверяем, что заголовок страницы Контакты правильный")
+    public AboutCompanyPage checkContactsText() {
+        searchText.shouldHave(text(CONTACTS_TEXT));
+
+        return this;
+    }
+
+    @Step("Проверяем, что содержание страницы Контакты правильное")
+    public AboutCompanyPage checkContactsContentText() {
+        searchText.shouldHave(text(CONTENT_CONTACTS_TEXT));
+
+        return this;
+    }
+
+    @Step("Открываем страницу Вакансии")
+    public AboutCompanyPage openVacancyPage() {
+        searchText.$(byText(VACANCY_TEXT)).click();
+
+        return this;
+    }
+
+    @Step("Проверяем, что заголовок страницы Вакансии правильный")
+    public AboutCompanyPage checkVacancyText() {
+        searchText.shouldHave(text(VACANCY_TEXT));
+
+        return this;
+    }
+
+    @Step("Проверяем, что содержание страницы Вакансии правильное")
+    public AboutCompanyPage checkVacancyContentText() {
+        vacancyText.shouldHave(text(CONTENT_VACANCY_TEXT));
 
         return this;
     }

@@ -32,32 +32,6 @@ public class AboutCompanyPage {
             VACANCY_TEXT = "Вакансии",
             CONTENT_VACANCY_TEXT = "Все категории";
 
-       /*     ABOUT_BREADCRUMBS = "Главная  >  О DPD  >  О компании",
-            MISSION_TITLE = "Миссия",
-            MISSION_TEXT = "Миссия и корпоративные ценности",
-            MISSION_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Миссия",
-            HISTORY_TITLE = "История",
-            HISTORY_TEXT = "История",
-            HISTORY_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  История",
-            FACTS_TITLE = "Факты и цифры",
-            FACTS_TEXT = "Факты и цифры",
-            FACTS_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Факты и цифры",
-            SUCCESS_TITLE = "Истории успеха",
-            SUCCESS_TEXT = "Истории успеха",
-            SUCCESS_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Истории успеха",
-            MANAGEMENT_TITLE = "Управление",
-            MANAGEMENT_TEXT = "Управление",
-            MANAGEMENT_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Управление",
-            LISENCE_TITLE = "Лицензии",
-            LISENCE_TEXT = "Лицензии",
-            LISENCE_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Лицензии",
-            AWARDS_TITLE = "Награды",
-            AWARDS_TEXT = "Награды",
-            AWARDS_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Награды",
-            QUALITY_TITLE = "Политика качества",
-            QUALITY_TEXT = "Политика качества",
-            QUALITY_BREADCRUMBS = "Главная  >  О DPD  >  О компании  >  Политика качества";*/
-
     private SelenideElement
             searchText = $("#content-wrapper"),
             contentText = $("#content-wrapper section:nth-child(1) div div div.item.item-33.mh-240 div p"),

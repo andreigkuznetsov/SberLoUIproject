@@ -210,5 +210,54 @@ public class AboutCompanyPage {
 
         return this;
     }
+
+    @Step("Открываем страницу О компании сайта СберЛогистика")
+    public AboutCompanyPage openAboutPageLink() {
+        open("https://sberlogistics.ru/about");
+
+        return this;
+    }
+
+    @Step("Открываем страницу Региональные офисы сайта СберЛогистика")
+    public AboutCompanyPage openBranchesPageLink() {
+        open("https://sberlogistics.ru/about/regions");
+
+        return this;
+    }
+
+    @Step("Открываем страницу Пресс-центр сайта СберЛогистика")
+    public AboutCompanyPage openPressPageLink() {
+        open("https://sberlogistics.ru/about/press_center");
+
+        return this;
+    }
+
+    @Step("Открываем страницу Документы сайта СберЛогистика")
+    public AboutCompanyPage openDocsPageLink() {
+        open("https://sberlogistics.ru/about/documents");
+
+        return this;
+    }
+
+    @Step("Открываем страницу Вопросы и ответы сайта СберЛогистика")
+    public AboutCompanyPage openFaqPageLink() {
+        open("https://sberlogistics.ru/about/faq");
+
+        return this;
+    }
+
+    @Step("Открываем страницу Контакты сайта СберЛогистика")
+    public AboutCompanyPage openContactsPageLink() {
+        open("https://sberlogistics.ru/about/contacts");
+
+        return this;
+    }
+
+    @Step("Открываем страницу Вакансии сайта СберЛогистика")
+    public AboutCompanyPage openVacanciesPageLink() {
+        open("https://sberlogistics.ru/about/vacancies");
+
+        return this;
+    }
 }
 

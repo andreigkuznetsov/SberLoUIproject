@@ -9,7 +9,7 @@
 
 ## Стек технологий:
 
-![java](./img/icons/Java.svg "Java")
+![java](/img/icons/Java.svg "Java")
 ![gradle](./img/icons/Gradle.svg "Gradle")
 ![jUnit5](./img/icons/JUnit5.svg "JUnit5")
 ![selenide](./img/icons/Selenide.svg "Selenide")

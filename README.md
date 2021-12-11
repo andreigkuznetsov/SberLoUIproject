@@ -3,15 +3,15 @@
 ## Cписок автоматизированных тест-кейсов в данном проекте:
 
 - [x] Проверки, что все разделы секции "О компании" открываются по внешним и локальным ссылкам  
-- [x] Проверки, что при переходах страницы содержат правильные названия 
-- [x] Проверки, что при переходах страницы содержат правильный контент
+- [x] Проверки, что при переходах страницы секции "О компании" содержат правильные названия 
+- [x] Проверки, что при переходах страницы секции "О компании" содержат правильный контент
 - [x] Проверка, что загружаемый pdf-файл на странице "Документы" содержит нужное количество страниц
 
 ## Стек технологий:
 
 ![Intelij_IDEA](img/icons/Intelij_IDEA.png)![Java](img/icons/Java.png)![Selenide](img/icons/Selenide.png)![Selenoid](img/icons/Selenoid.png)![Gradle](img/icons/Gradle.png)![JUnit5](img/icons/JUnit5.png)![Allure Report](img/icons/Allure_Report.png)![AllureTestOps](img/icons/AllureTestOps.png)![Github](img/icons/Github.png)![Jenkins](img/icons/Jenkins.png)![Telegram](img/icons/Telegram.png)![Jira](img/icons/Jira.png)
 
-Java, Gradle, JUnit5, Selenide, Rest-Assured, Jenkins, Selenoid, Allure Reports, Telegram (уведомления), Jira, TestOps
+Java, Gradle, JUnit5, Selenide, Jenkins, Selenoid, Allure Reports, Telegram (уведомления), Jira, TestOps
 
 ### Для запусков автотестов используется Jenkins.
 
@@ -52,7 +52,7 @@ allure serve build/allure-results
 
 ![Jenkins_Start](./img/Jenkins_Start1.png)
 
-##### Дождаться выполнения сборки. нажать на кнопку "Akkure Report"
+##### Дождаться выполнения сборки. нажать на кнопку "Allure Report"
 
 ![Jenkins_Start](./img/Jenkins_Start2.png)
 

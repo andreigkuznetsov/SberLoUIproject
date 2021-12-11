@@ -9,18 +9,7 @@
 
 ## Стек технологий:
 
-![java](./img/icons/Java.svg "Java")
-![gradle](./img/icons/Gradle.svg "Gradle")
-![jUnit5](./img/icons/JUnit5.svg "JUnit5")
-![selenide](./img/icons/Selenide.svg "Selenide")
-![rest-assured](./img/icons/Rest-Assured.svg "Rest-Assured")
-![jenkins](./img/icons/Jenkins.svg "Jenkins")
-![Selenoid](./img/icons/Selenoid.svg "Selenoid")
-![allure-logo](./img/icons/AllureReport.svg "Allure_Report")
-![telegram-logo](./img/icons/Telegram.svg "Telegram")
-![jira](./img/icons/Jira.svg "Jira")
-![testOps](./img/icons/TestOps.svg "TestOps")
-
+![Intelij_IDEA](img/icons/Intelij_IDEA.png)![Java](img/icons/Java.png)![Selenide](img/icons/Selenide.png)![Selenoid](img/icons/Selenoid.png)![Gradle](img/icons/Gradle.png)![JUnit5](img/icons/JUnit5.png)![Allure Report](img/icons/Allure_Report.png)![AllureTestOps](img/icons/AllureTestOps.png)![Github](img/icons/Github.png)![Jenkins](img/icons/Jenkins.png)![Rest-Assured](img/icons/Rest-Assured.png)![Telegram](img/icons/Telegram.png)![Jira](img/icons/Jira.png)
 Java, Gradle, JUnit5, Selenide, Rest-Assured, Jenkins, Selenoid, Allure Reports, Telegram (уведомления), Jira, TestOps
 
 ### Для запусков автотестов используется Jenkins.

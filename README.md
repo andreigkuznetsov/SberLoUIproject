@@ -52,7 +52,7 @@ allure serve build/allure-results
 
 ![Jenkins_Start](./img/Jenkins_Start1.png)
 
-##### Дождаться выполнения сборки. нажать на кнопку "Akkure Report"
+##### Дождаться выполнения сборки. нажать на кнопку "Allure Report"
 
 ![Jenkins_Start](./img/Jenkins_Start2.png)
 

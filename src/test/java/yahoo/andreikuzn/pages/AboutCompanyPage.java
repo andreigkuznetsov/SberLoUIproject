@@ -30,7 +30,8 @@ public class AboutCompanyPage {
             CONTACTS_TEXT = "Контакты",
             CONTENT_CONTACTS_TEXT = "Реквизиты",
             VACANCY_TEXT = "Вакансии",
-            CONTENT_VACANCY_TEXT = "Все категории";
+            CONTENT_VACANCY_TEXT = "Все категории",
+            COOKIES_ACCEPT_BUTTON = "Закрыть";
 
     private SelenideElement
             searchText = $("#content-wrapper"),
@@ -38,7 +39,8 @@ public class AboutCompanyPage {
             vacancyText = $("#vacancy_filter_section"),
             openAboutPage = $("ul.nav"),
             downloadLink = $("#content-wrapper section:nth-child(3) div div div p:nth-child(1) a"),
-            downloadText = $(byText("Положение о тарифах"));
+            downloadText = $(byText("Положение о тарифах")),
+            cookiesAccept = $("div.cookie-popup__wrapper");
 
     @Step("Открываем главную страницу сайта СберЛогистика")
     public AboutCompanyPage openIndexPage() {
@@ -140,6 +142,7 @@ public class AboutCompanyPage {
 
     @Step("Проверяем, что документ Положение о тарифах содержит 217 страниц")
     public AboutCompanyPage checkPublicOfferDoc() throws IOException {
+        cookiesAccept.$(byText(COOKIES_ACCEPT_BUTTON)).click();
         downloadText.click();
         File pdf = downloadLink.download();
         PDF parsedPdf = new PDF(pdf);

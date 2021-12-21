@@ -1,7 +1,6 @@
 package yahoo.andreikuzn.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import configuration.ConfigurationSelenoidSets;
 import helpers.Attach;
 import org.aeonbits.owner.ConfigFactory;

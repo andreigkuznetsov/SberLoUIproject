@@ -2,6 +2,7 @@ package yahoo.andreikuzn.pages;
 
 import com.codeborne.pdftest.PDF;
 import com.codeborne.selenide.SelenideElement;
+import configuration.WebDriverUtil;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 
@@ -42,9 +43,11 @@ public class AboutCompanyPage {
             downloadText = $(byText("Положение о тарифах")),
             cookiesAccept = $("div.cookie-popup__wrapper");
 
+    WebDriverUtil webDriver = new WebDriverUtil();
+
     @Step("Открываем главную страницу сайта СберЛогистика")
     public AboutCompanyPage openIndexPage() {
-        open("https://sberlogistics.ru/");
+        webDriver.openIndexPage();
 
         return this;
     }

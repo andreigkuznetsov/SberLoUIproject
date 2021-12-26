@@ -2,6 +2,7 @@ package configuration;
 
 import com.codeborne.selenide.Configuration;
 import org.aeonbits.owner.ConfigFactory;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -21,6 +22,13 @@ public class WebDriverUtil {
         Configuration.browserSize = cfg.browserSize();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        /* ChromeOptions chromeOptions = new ChromeOptions();
+
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-infobars");
+        chromeOptions.addArguments("--disable-popup-blocking");
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--lang=en-en");*/
 
         if (System.getProperty("environment").equals("remote")) {
             capabilities.setCapability("enableVNC", true);
@@ -28,6 +36,8 @@ public class WebDriverUtil {
             Configuration.remote = cfg.remoteBrowserUrl();
         }
 
+        //capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
         Configuration.browserCapabilities = capabilities;
+        //Configuration.timeout = 10000;
     }
 }
